@@ -8,20 +8,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 @SpringBootTest
 class StudentManagementApplicationTests {
 
-//    @Test
-//    void contextLoads() {
-//    }
-//
-
     @Test
-    void testAddition() {
-        int a = 5;
-        int b = 3;
-
-
-        int result = a + b;
-
-
-        assertEquals(8, result);
+    void contextLoads() {
     }
+
+
+
 }
