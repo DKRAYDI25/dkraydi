@@ -1,5 +1,4 @@
-FROM ubuntu:latest
-LABEL authors="dorsa"
+
 
 # Image Java légère
 FROM openjdk:17-jdk-slim
