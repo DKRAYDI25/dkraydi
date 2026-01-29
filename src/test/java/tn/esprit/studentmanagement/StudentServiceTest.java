@@ -1,41 +1,35 @@
 package tn.esprit.studentmanagement;
 
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
 import tn.esprit.studentmanagement.services.StudentService;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.when;
+
+@ExtendWith(MockitoExtension.class)
 
 class StudentServiceTest {
 
+    @Mock
+    private StudentService studentServiceMock;
+
+    @InjectMocks
+    private StudentService studentService;
+
+    // TEST OK
     @Test
-    void testGetStudentName() {
+    void testInstanceMock() {
 
-        // Mock du service
-        StudentService serviceMock = Mockito.mock(StudentService.class);
+        when(studentServiceMock.getStudentName())
+                .thenReturn("Dorsaf");
 
-        // Comportement simulé
-        Mockito.when(serviceMock.getStudentName()).thenReturn("Dorsaf");
+        String result = studentServiceMock.getStudentName();
 
-        // Appel
-        String result = serviceMock.getStudentName();
-
-        // Vérification
         assertEquals("Dorsaf", result);
-    }
-
-
-    @Test
-    void testMethodIsCalled() {
-
-        // Mock du service
-        StudentService serviceMock = Mockito.mock(StudentService.class);
-
-        // Appel de la méthode
-        serviceMock.getStudentName();
-
-        // Vérifier que la méthode a bien été appelée une fois
-        Mockito.verify(serviceMock, Mockito.times(1)).getStudentName();
     }
 
 

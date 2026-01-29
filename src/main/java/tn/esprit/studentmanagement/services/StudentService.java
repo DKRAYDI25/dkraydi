@@ -16,6 +16,11 @@ public class StudentService implements IStudentService {
     public Student getStudentById(Long id) { return studentRepository.findById(id).orElse(null); }
     public Student saveStudent(Student student) { return studentRepository.save(student); }
     public void deleteStudent(Long id) { studentRepository.deleteById(id); }
-    public String getStudentName() {return "Real DB Value";
+    public String getStudentName() {
+        return "REAL_NAME";
+    }
+
+    public static String getSchoolName() {
+        return "ESPRIT";
     }
 }
