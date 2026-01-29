@@ -32,10 +32,10 @@ class StudentServiceTest {
         StudentService serviceMock = Mockito.mock(StudentService.class);
 
         // Appel de la méthode
-        serviceMock.getStudentNamee();
+        serviceMock.getStudentName();
 
         // Vérifier que la méthode a bien été appelée une fois
-        Mockito.verify(serviceMock, Mockito.times(1)).getStudentNamee();
+        Mockito.verify(serviceMock, Mockito.times(1)).getStudentName();
     }
 
 
