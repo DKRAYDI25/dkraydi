@@ -38,19 +38,5 @@ class StudentServiceTest {
         Mockito.verify(serviceMock, Mockito.times(1)).getStudentName();
     }
 
-    @Test
-    void testShouldFail() {
 
-        // Mock du service
-        StudentService serviceMock = Mockito.mock(StudentService.class);
-
-        // Valeur simulée
-        Mockito.when(serviceMock.getStudentName()).thenReturn("Dorsaf");
-
-        // Appel
-        String result = serviceMock.getStudentName();
-
-        // ❌ ERREUR VOLONTAIRE (pour tester la notification)
-        assertEquals("ALI", result); // <-- va échouer
-    }
 }
